@@ -179,9 +179,13 @@ namespace TicTacToeConsole
                 switch (whichplayer)
                 {
                     case "X":                 //Player 1's turn
+                        //Only UI
                         Console.Clear();
+                        //Only UI
                         Console.WriteLine("Player {0}: \n", whichplayer);
+                        //Only UI
                         Console.WriteLine("{0}  |  {1}  |  {2}\n___|_____|___\n{3}  |  {4}  |  {5}\n___|_____|___\n{6}  |  {7}  |  {8}\n", list_displayed[0], list_displayed[1], list_displayed[2], list_displayed[3], list_displayed[4], list_displayed[5], list_displayed[6], list_displayed[7], list_displayed[8]);
+                        //Only UI
                         Console.Write("Enter your desired field: ");
 
                         string field_p1 = Convert.ToString(Console.ReadLine());
@@ -193,6 +197,7 @@ namespace TicTacToeConsole
                         }
                         catch (Exception e)
                         {
+                            //Only UI
                             Console.WriteLine("An error occured: {0}", e.Source);
                             field_int_p1 = 0;
                             Menu();
@@ -216,8 +221,11 @@ namespace TicTacToeConsole
 
 
                     case "O":                 //Bot's turn
+                        //Only UI
                         Console.Clear();
+                        //Only UI
                         Console.WriteLine("Player {0}: \n", whichplayer);
+                        //Only UI
                         Console.WriteLine("{0}  |  {1}  |  {2}\n___|_____|___\n{3}  |  {4}  |  {5}\n___|_____|___\n{6}  |  {7}  |  {8}\n", list_displayed[0], list_displayed[1], list_displayed[2], list_displayed[3], list_displayed[4], list_displayed[5], list_displayed[6], list_displayed[7], list_displayed[8]);
 
 
@@ -249,11 +257,13 @@ namespace TicTacToeConsole
             if (has_someone_won == 1)
             {
                 string player_name_who_won = Who_won(i_could_win_p1, i_could_win_p2, list_displayed);
+                //Only UI
                 Console.WriteLine("\n\nPlayer {0} has won !\n\n{1}  |  {2}  |  {3}\n___|_____|___\n{4}  |  {5}  |  {6}\n___|_____|___\n{7}  |  {8}  |  {9}\n", player_name_who_won, list_displayed[0], list_displayed[1], list_displayed[2], list_displayed[3], list_displayed[4], list_displayed[5], list_displayed[6], list_displayed[7], list_displayed[8]);
                 Menu();
             }
             if (turn_counter >= 9)
             {
+                //Only UI
                 Console.WriteLine("\n\nDraw!\n\n{0}  |  {1}  |  {2}\n___|_____|___\n{3}  |  {4}  |  {5}\n___|_____|___\n{6}  |  {7}  |  {8}\n", list_displayed[0], list_displayed[1], list_displayed[2], list_displayed[3], list_displayed[4], list_displayed[5], list_displayed[6], list_displayed[7], list_displayed[8]);
                 Menu();
             }
