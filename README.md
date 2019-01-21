@@ -1,1 +1,1 @@
-# tictactoe
+# tictactoe, a simple game
