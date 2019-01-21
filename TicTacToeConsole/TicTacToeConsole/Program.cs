@@ -33,7 +33,7 @@ namespace TicTacToeConsole
 
 
 
-
+        //Method for Player vs Player gamemode
         public static void Spieler_vs_Spieler(List<int> list, List<string> list_displayed, List<int> check_if_field_already_used)
         {
             int has_someone_won = 0, i_could_win_p1 = 1, i_could_win_p2 = 1, turn_counter = 0, field_int_p1, field_int_p2; string whichplayer = "X";
@@ -161,10 +161,11 @@ namespace TicTacToeConsole
 
 
 
+
+
+        //Method for Player vs Bot gamemode
         public static void Spieler_vs_Bot(List<int> list, List<string> list_displayed, List<int> check_if_field_already_used)
         {
-
-
 
 
 
@@ -259,25 +260,10 @@ namespace TicTacToeConsole
 
 
 
-
-
-
-
-
-
         }
 
 
-
-
-
-
-
-
-
-
-        
-
+        //Method to determine if someone won, always executed after a turn
         public static int Has_someone_won(List<int> list)
         {
             if (list[0] == list[1] && list[1] == list[2]) { return 1; }
@@ -315,13 +301,10 @@ namespace TicTacToeConsole
             }
                            
 
-
-            
-            
         }
 
 
-
+        //Method to determine who won the game
         public static string Who_won(int i_could_win_p1, int i_could_win_p2, List<string> list_displayed)
         {
             if (i_could_win_p1 > i_could_win_p2)
