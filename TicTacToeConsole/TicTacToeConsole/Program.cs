@@ -58,26 +58,38 @@ namespace TicTacToeConsole
                         }
                         catch (Exception e)
                         {
-                            Console.WriteLine("An error occured: {0}", e);
+                            Console.WriteLine("An error occured: {0}", e.Source);
                             field_int_p1 = 0;
                             Menu();
                         }
 
-                        
-             
-                        if (check_if_field_already_used[field_int_p1 - 1] != 1 & check_if_field_already_used[field_int_p1 - 1] != 2)
+
+
+                        try
                         {
-                            list[field_int_p1 - 1] = 1;
-                            check_if_field_already_used[field_int_p1 - 1] = 1;
-                            list_displayed[field_int_p1 - 1] = "X";
-                            whichplayer = "O";
-                            i_could_win_p1 = 1;
-                            i_could_win_p2 = 0;
-                            turn_counter += 1;
+                            if (check_if_field_already_used[field_int_p1 - 1] != 1 & check_if_field_already_used[field_int_p1 - 1] != 2)
+                            {
+                                list[field_int_p1 - 1] = 1;
+                                check_if_field_already_used[field_int_p1 - 1] = 1;
+                                list_displayed[field_int_p1 - 1] = "X";
+                                whichplayer = "O";
+                                i_could_win_p1 = 1;
+                                i_could_win_p2 = 0;
+                                turn_counter += 1;
+                                break;
+                            }
+                            else
+                            { whichplayer = "X"; break; }
+                        }
+
+                        catch (Exception e)
+                        {
+                            Console.WriteLine("An error occured: {0}", e.Source);
+                            Menu();
                             break;
                         }
-                        else
-                        { whichplayer = "X"; break; }
+             
+                        
 
 
                     case "O":                 //Player 2's turn
@@ -95,26 +107,36 @@ namespace TicTacToeConsole
                         }
                         catch (Exception e)
                         {
-                            Console.WriteLine("An error occured: {0}", e);
+                            Console.WriteLine("An error occured: {0}", e.Source);
                             field_int_p2 = 0;
                             Menu();
                         }
 
 
 
-                        if (check_if_field_already_used[field_int_p2 - 1] != 1 & check_if_field_already_used[field_int_p2 - 1] != 2)
+                        try
                         {
-                            list[field_int_p2 - 1] = 2;
-                            check_if_field_already_used[field_int_p2 - 1] = 2;
-                            list_displayed[field_int_p2 - 1] = "O";
-                            whichplayer = "X";
-                            i_could_win_p1 = 0;
-                            i_could_win_p2 = 1;
-                            turn_counter += 1;
+                            if (check_if_field_already_used[field_int_p2 - 1] != 1 & check_if_field_already_used[field_int_p2 - 1] != 2)
+                            {
+                                list[field_int_p2 - 1] = 2;
+                                check_if_field_already_used[field_int_p2 - 1] = 2;
+                                list_displayed[field_int_p2 - 1] = "O";
+                                whichplayer = "X";
+                                i_could_win_p1 = 0;
+                                i_could_win_p2 = 1;
+                                turn_counter += 1;
+                                break;
+                            }
+                            else
+                            { whichplayer = "O"; break; }
+                        }
+
+                        catch (Exception e)
+                        {
+                            Console.WriteLine("An error occured: {0}", e.Source);
+                            Menu();
                             break;
                         }
-                        else
-                        { whichplayer = "O"; break; }
                 }
                 has_someone_won = Has_someone_won(list);
                 
@@ -170,7 +192,7 @@ namespace TicTacToeConsole
                         }
                         catch (Exception e)
                         {
-                            Console.WriteLine("An error occured: {0}", e);
+                            Console.WriteLine("An error occured: {0}", e.Source);
                             field_int_p1 = 0;
                             Menu();
                         }
