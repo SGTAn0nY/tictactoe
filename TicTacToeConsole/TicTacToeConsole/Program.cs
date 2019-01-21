@@ -1,4 +1,12 @@
-﻿using System;
+﻿
+
+
+//Aufgabe: mehr in Methoden auslagern !!! (Dopplungen vermeiden)
+
+
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
